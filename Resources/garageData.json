@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1001,
+        "name": "Ford Mustang",
+        "model": "Mustang",
+        "make": "Ford",
+        "year": 1959,
+        "licensePlate" : "12345H",
+        "registeredOwner" : "Chris McD",
+        "registrationEnd": "2023-10-10",
+        "permittedNumberDays": 90,
+        "logbook": [{
+            "id": 1,
+            "tripDateTime" : "2023-11-11T16:00:04+11:00",
+            "date": "2023-11-11",
+            "time": "16:00:04",
+            "driver": "Chris",
+            "purposeOfTrip": "Cruising",
+            "signature": "TODO"}
+        ]
+    },
+    {
+        "id": 1002,
+        "name": "Holden GT",
+        "model": "Grand Touring",
+        "make": "Holden",
+        "year": 1963,
+        "licensePlate": "98765H",
+        "registeredOwner" : "Chris McD",
+        "registrationEnd": "2023-07-07",
+        "permittedNumberDays": 90,
+        "logbook": [{
+            "id": 1,
+            "tripDateTime" : "2023-08-21T12:00:04+11:00",
+            "date": "2023-08-21",
+            "time": "12:00:04",
+            "driver": "Chris",
+            "purposeOfTrip": "Repairs",
+            "signature": "TODO"}
+        ]
+    }
+]
