@@ -12,8 +12,8 @@ struct LogbookEntryForm: View {
     var car: Car
     @Binding var config: LogbookEntryConfig
     @State private var showingAlert = false
-    @State private var driver: String = ""
-    @State private var selection: String = "Cruising"
+//    @State private var driver: String = ""
+//    @State private var selection: String = "Cruising"
     @EnvironmentObject var garage: Garage
 
     var body: some View {
@@ -43,11 +43,11 @@ struct LogbookEntryForm: View {
                     }
                     HStack{
                         Text("Driver: ")
-                        TextField("Driver name", text: $driver)
+                        TextField("Driver name", text: $config.logbookEntry.driver)
                     }
                     HStack{
                         Text("Purpose of trip: ")
-                        Picker(selection, selection: $selection) {
+                        Picker(config.logbookEntry.purposeOfTrip, selection: $config.logbookEntry.purposeOfTrip) {
                             ForEach(garage.reasons, id: \.self) {
                                 Text($0)
                             }

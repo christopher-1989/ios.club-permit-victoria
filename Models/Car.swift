@@ -20,3 +20,10 @@ struct Car: Identifiable, Hashable, Codable {
     var logbook: [LogbookEntry]
  }
 
+extension Car {
+    mutating func addLogbookEntry(_ entry: LogbookEntry) {
+        var entryToAdd = entry
+        entryToAdd.id = (logbook.map { $0.id }.max() ?? 0) + 1
+        logbook.append(entryToAdd)
+    }
+}

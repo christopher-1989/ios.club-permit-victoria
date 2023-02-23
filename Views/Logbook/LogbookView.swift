@@ -30,9 +30,7 @@ struct LogbookView: View {
                         }
                     }
                     .listStyle(.plain)
-                    .frame(width: 400, height: 200)
-                    Spacer()
-
+                    .scaledToFit()
                 }
             }
             .toolbar {
@@ -53,10 +51,11 @@ struct LogbookView: View {
     
         private func didDismissEditor() {
                 if logbookEntryConfig.shouldSaveChanges {
-//                    car = modelData.add(logbookEntryConfig.logbookEntry)
-//                    SOME CODE FOR ADDING NEW ENTRY
-//                    MUST ALSO TRACK WHICH CAR IS BEING ADDED
-                    print("added to cars logbook")
+
+                    var carWithUpdatedLogbook: Car? = garage.car(with: car.id)
+                    if carWithUpdatedLogbook == nil {return}
+                    carWithUpdatedLogbook?.addLogbookEntry(logbookEntryConfig.logbookEntry)
+                    garage.update(carWithUpdatedLogbook!)
                 }
             }
 }
@@ -64,7 +63,7 @@ struct LogbookView: View {
 
 struct LogbookView_Previews: PreviewProvider {
     static var previews: some View {
-        LogbookView(car: Garage().cars[0])
+        LogbookView(car: Garage().cars[2])
             .environmentObject(Garage())
     }
 }

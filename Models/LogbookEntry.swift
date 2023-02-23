@@ -26,8 +26,8 @@ extension LogbookEntry {
         return LogbookEntry(
             id: LogbookEntry.newLogbookEntryId,
             driver: "",
-            purposeOfTrip: "",
-            tripDateTime: now.formatted(),
+            purposeOfTrip: "Cruising",
+            tripDateTime: now.ISO8601Format(.iso8601(timeZone: .current)),
             time: now.formatted(date: .omitted, time: .shortened),
             date: now.formatted(date: .complete, time: .omitted),
             signature: ""

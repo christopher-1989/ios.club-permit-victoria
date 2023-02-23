@@ -19,7 +19,7 @@ struct DateTime {
     static func getDate(_ dateString: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_AU")
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         let dateTime = dateFormatter.date(from: dateString)
         return dateTime!.formatted(date: .complete, time: .omitted)
     }
